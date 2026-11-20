@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import CardService from "../CardService";
+import Container from "../Container";
 import Title from "../Title";
 
 export default function Service() {
   return (
     <>
-      <section className="relative w-full min-h-[558px] h-auto my-52 max-sm:my-62 overflow-hidden">
+      <section className="relative w-full py-24 md:py-32 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 1.1 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -17,13 +18,13 @@ export default function Service() {
             damping: 30,
             stiffness: 100,
           }}
-          className="absolute bottom-0 left-0 w-full h-[80%] z-0 bg-black-normal gpu-accelerated"
+          className="absolute bottom-0 left-0 w-full h-[70%] z-0 bg-black-normal"
         ></motion.div>
 
-        <div className="flex flex-col items-center gap-12 mb-6">
-          <div className="relative z-10 h-full gap-12 flex flex-col items-start px-4 max-w-[1440px]">
+        <Container as="div" style="relative z-10">
+          <div className="flex flex-col gap-12">
             <Title titleText="Serviços" />
-            <div className=" flex flex-wrap justify-center items-end gap-12">
+            <div className="grid gap-6 sm:max-w-[560px] lg:max-w-none lg:grid-cols-3 lg:items-end lg:gap-8">
               <CardService
                 title="Desenvolvimento Frontend"
                 text="Interfaces modernas usando React, Next.js e Tailwind, com foco em experiência de usuário e responsividade."
@@ -100,7 +101,7 @@ export default function Service() {
           {/* <Button onClick={OpenMoreServices}>
           {moreService ? "Ver menos" : "Ver todos serviços "}
         </Button> */}
-        </div>
+        </Container>
       </section>
     </>
   );

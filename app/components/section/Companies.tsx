@@ -41,7 +41,7 @@ export default function Companies() {
   );
 
   return (
-    <Container style="flex flex-col gap-6 mb-[200px] max-sm:mb-40">
+    <Container style="py-24 md:py-32 flex flex-col gap-6">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -57,18 +57,18 @@ export default function Companies() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
         variants={containerVariants}
-        className="flex flex-col gap-20 animation-container"
+        className="flex flex-col gap-12 md:gap-16"
       >
-        <motion.div
+        <motion.h2
           variants={titleVariants}
-          className="resize-about-text w-full text-center font-bold text-white-light gpu-accelerated"
+          className="resize-about-text max-w-[900px] font-bold text-white-light"
         >
-          Empresa que
-          <span className="italic text-400"> confiaram </span>
+          Empresas que
+          <span className="italic text-blue-light"> confiaram </span>
           em meu serviço
-        </motion.div>
+        </motion.h2>
 
-        <div className="flex flex-wrap gap-4 justify-center items-center">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           <CardCompanies textCard="Solvis" imageSrc="solvis" />
           <CardCompanies textCard="BNE" imageSrc="bne" />
           <CardCompanies textCard="Harpia Tech" imageSrc="harpia" />

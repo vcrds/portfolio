@@ -46,7 +46,7 @@ export default function CardCompanies({
         damping: 20,
         stiffness: 300,
       }}
-      className="flex flex-col items-start gap-2 max-sm:w-full cursor-pointer magnetic-element gpu-accelerated animation-container"
+      className="flex flex-col items-start gap-2 w-full"
     >
       <motion.div
         whileHover={{ scale: 1.05, borderColor: "#5390e3" }}
@@ -55,7 +55,7 @@ export default function CardCompanies({
           damping: 20,
           stiffness: 300,
         }}
-        className="w-[250px] h-[350px] border border-600 bg-gradient-3 rounded flex items-center justify-center overflow-hidden max-sm:w-full glow-effect transform-3d"
+        className="w-full aspect-[5/6] md:aspect-[4/3] border border-600 bg-gradient-3 rounded flex items-center justify-center overflow-hidden glow-effect transform-3d"
         style={{ transformStyle: "preserve-3d" }}
       >
         <motion.div
@@ -65,14 +65,15 @@ export default function CardCompanies({
             damping: 20,
             stiffness: 300,
           }}
-          className="w-[80%] h-[80%] flex items-center justify-center"
+          className="w-[64%] h-[64%] flex items-center justify-center"
         >
           <Image
             src={`/companies/${imageSrc}.png`}
             width={160}
             height={160}
             alt={altImage}
-            className="object-contain"
+            sizes="160px"
+            className="object-contain w-full h-auto max-w-[160px]"
           />
         </motion.div>
       </motion.div>

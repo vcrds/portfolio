@@ -4,6 +4,17 @@ import { ReactNode, useMemo } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useMagnetic } from "../hooks/useMagnetic";
 
+/**
+ * Tailwind can't generate classes from interpolated strings (`h-[${x}]`),
+ * so every height maps to a literal class. Min-height, not height: the
+ * card grows with its content instead of clipping it.
+ * The "350" card is only taller when cards sit side by side (lg+).
+ */
+const HEIGHT_CLASS: Record<string, string> = {
+  "300": "lg:min-h-[300px]",
+  "350": "lg:min-h-[350px]",
+};
+
 interface cardProps {
   title: string;
   children: ReactNode;
@@ -43,9 +54,9 @@ export default function CardService({
         damping: 20,
         stiffness: 300,
       }}
-      className={`w-[300px] p-4 pt-12 rounded-lg bg-400 flex flex-col items-center box-shadow 
-      h-[${selectedHeight}] ${selectedHeight === "300px" ? "h-[300px]" : ""}
-      max-[995px]:!h-[300px] max-sm:!w-[100%] cursor-pointer magnetic-element glow-effect transform-3d gpu-accelerated animation-container`}
+      className={`w-full px-6 pb-8 pt-12 rounded-lg bg-400 flex flex-col items-center text-center box-shadow ${
+        HEIGHT_CLASS[selectedHeight] ?? HEIGHT_CLASS["300"]
+      } cursor-pointer`}
     >
       <motion.div
         whileHover={{
@@ -64,9 +75,13 @@ export default function CardService({
       </motion.div>
 
       <div className="flex flex-col items-center gap-2 mt-4">
-        <h3 className="text-[24px] text-white-light font-semibold">{title}</h3>
+        <h3 className="text-[24px] leading-tight text-white-light font-semibold text-balance">
+          {title}
+        </h3>
 
-        <span className="text-[16px] text-gray-7 max-w-[268px]">{text}</span>
+        <p className="text-[16px] leading-relaxed text-white-dark max-w-[268px]">
+          {text}
+        </p>
       </div>
     </motion.div>
   );

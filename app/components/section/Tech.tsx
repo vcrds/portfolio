@@ -58,24 +58,24 @@ export default function Tech() {
   );
 
   return (
-    <Container style="mb-[200px] flex-wrap flex flex-row justify-between items-center gap-6 max-sm:mb-40">
-      <motion.div
+    <Container style="py-24 md:py-32 grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
+      <motion.h2
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
         variants={textVariants}
-        className="resize-about-text max-w-[660px] font-bold text-white-light gpu-accelerated animation-container"
+        className="resize-about-text max-w-[660px] font-bold text-white-light"
       >
         Trabalho com
-        <span className="italic text-white-dark"> técnologias de ponta</span>
-      </motion.div>
+        <span className="italic text-white-dark"> tecnologias de ponta</span>
+      </motion.h2>
 
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
         variants={containerVariants}
-        className="flex flex-col gap-6 animation-container"
+        className="flex flex-col gap-6 max-w-[560px]"
       >
         <motion.div
           variants={containerVariants}
@@ -101,11 +101,11 @@ export default function Tech() {
           </motion.div>
         </motion.div>
 
-        <motion.div variants={textVariants} className="flex flex-col gap-2">
-          <span className="text-gray-6">
-            Atualmente algumas das principais técnologias utilizadas nos meu
-            dia-dia, mas sempre estou aberto a novas tecnologias.
-          </span>
+        <motion.div variants={textVariants} className="flex flex-col gap-3">
+          <p className="text-gray-6 leading-relaxed">
+            Atualmente algumas das principais tecnologias utilizadas no meu
+            dia a dia, mas sempre estou aberto a novas tecnologias.
+          </p>
           <SmallLink textSmall="Falar comigo" linkSmall="/#contato" />
         </motion.div>
       </motion.div>

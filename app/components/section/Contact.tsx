@@ -26,11 +26,11 @@ const contactItems = [
 
 export default function Contact() {
   return (
-    <section id="contato" className="bg-black-normal py-16">
-      <Container style="flex flex-col gap-8">
+    <section id="contato" className="bg-black-normal py-24 md:py-32">
+      <Container as="div" style="flex flex-col gap-8">
         <Title titleText="Contato" />
 
-        <p className="max-w-2xl text-gray-7">
+        <p className="max-w-2xl text-gray-7 leading-relaxed">
           Estou disponível para novos projetos e parcerias. Escolha uma forma de
           contato abaixo e vamos conversar.
         </p>
@@ -42,12 +42,12 @@ export default function Contact() {
               href={item.link}
               target="_blank"
               rel="noreferrer"
-              className="rounded-xl border border-gray-5 bg-black-dark p-4 transition hover:border-blue-light hover:bg-[#0f172a]"
+              className="min-w-0 rounded-xl border border-gray-5 bg-black-dark p-4 transition hover:border-blue-light hover:bg-black-light"
             >
               <div className="text-gray-7 text-xs uppercase tracking-wider">
                 {item.label}
               </div>
-              <div className="mt-2 text-white-light font-semibold">
+              <div className="mt-2 text-white-light font-semibold break-words">
                 {item.value}
               </div>
             </a>

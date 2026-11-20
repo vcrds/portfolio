@@ -30,7 +30,8 @@ export default function CustomMarquee({
     <div
       className={`overflow-hidden ${className} py-12 relative animation-container`}
     >
-      <div className="absolute w-[102%] h-[115px] bg-gradient-2 transform rotate-[-3deg] -left-2 -z-10 gpu-accelerated" />
+      {/* No .gpu-accelerated here: its `transform: translateZ(0)` overrides rotate-[-3deg]. */}
+      <div className="absolute w-[102%] h-[115px] bg-gradient-2 rotate-[-3deg] -left-2 -z-10" />
 
       <motion.div
         initial={{ opacity: 0 }}
