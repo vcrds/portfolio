@@ -141,13 +141,6 @@ body {
   background-image: url("/icon_star.svg");
 }
 
-/* Smooth transitions for interactive elements */
-* {
-  transition-property: color, background-color, border-color, transform, opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,

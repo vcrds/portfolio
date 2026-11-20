@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
 import "./styles/animations.css";
+import MotionProvider from "./components/MotionProvider";
 
 const rubik = Rubik({
   weight: ["400", "500", "600", "700"],
@@ -21,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${rubik.className} antialiased`}>{children}</body>
+      <body className={`${rubik.className} antialiased`}>
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }
