@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* The site is dark-only: text defaults to light regardless of OS theme. */
+  --background: #06090f;
+  --foreground: #e8ebf0;
 
   /* blue */
   --blue: #1b69d2;
@@ -46,13 +47,6 @@
   --yellow: #ffce52;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -60,7 +54,6 @@ html {
 body {
   color: var(--foreground);
   background: var(--black-dark);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
