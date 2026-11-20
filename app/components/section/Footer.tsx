@@ -62,7 +62,7 @@ export default function Footer() {
             className="flex gap-4 animation-container"
           >
             <motion.a
-              href="https://github.com"
+              href="https://github.com/vinicdev"
               target="_blank"
               rel="noopener noreferrer"
               variants={iconVariants}
@@ -74,7 +74,7 @@ export default function Footer() {
               <FaGithub size={20} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/vinicdev/"
               target="_blank"
               rel="noopener noreferrer"
               variants={iconVariants}
@@ -86,7 +86,7 @@ export default function Footer() {
               <FaLinkedin size={20} />
             </motion.a>
             <motion.a
-              href="mailto:contato@exemplo.com"
+              href="mailto:contato@viniciuscardoso.dev"
               variants={iconVariants}
               whileHover="hover"
               whileTap="tap"
