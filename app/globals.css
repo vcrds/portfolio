@@ -88,15 +88,6 @@ body {
   padding-top: clamp(80px, 10vw, 12.5rem);
 }
 
-.grayscale-image {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out;
-}
-
-.grayscale-image:hover {
-  filter: grayscale(0%);
-}
-
 .icon-arrow {
   background-image: url("/right-arrow.svg");
 }
